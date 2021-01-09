@@ -2,7 +2,7 @@
  * Example helper function with no arguments.
  * @return {String} 'Hello world!'.
  */
-const exampleFunction = () => "Hello world!";
+const addUser = () => "Add User!";
 
 /**
  * Example handler for handling a given function.
@@ -10,11 +10,11 @@ const exampleFunction = () => "Hello world!";
  * @param {Response} res Response to be sent to the user.
  * @return {undefined}
  */
-const exampleHandler = async (req, res) => {
-  res.status(200).send(exampleFunction());
+const addUserHandler = async (req, res) => {
+  res.status(200).send(addUser());
 };
 
 module.exports = {
-  exampleHandler,
-  exampleFunction,
+  addUserHandler,
+  addUser,
 };

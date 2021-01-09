@@ -3,7 +3,7 @@ const express = require("express");
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || "0.0.0.0";
 
-const { declareTestRoutes } = require("./api/declareRoutes");
+const { declareDatabaseRoutes } = require("./api/declareUserRoutes");
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.promiseListen = function promiseListen(port, host) {
 
 const runServer = async () => {
   // declare routes
-  declareTestRoutes(app);
+  declareDatabaseRoutes(app);
 
   // start server
   await app.promiseListen(PORT, HOST);

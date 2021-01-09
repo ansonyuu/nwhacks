@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { exampleHandler } = require("./endpoints/example");
+const { addUserHandler } = require("./endpoints/user");
 
 const routerOptions = {
   mergeParams: true,
@@ -11,17 +11,17 @@ const routerOptions = {
  * @param  {Express} app  Express app for current server.
  * @return {undefined}
  */
-const declareTestRoutes = (app) => {
-  const route = "/test";
+const declareDatabaseRoutes = (app) => {
+  const route = "/database";
   const router = Router(routerOptions);
 
-  router.get("/", exampleHandler);
+  router.get("/addNewUser", addUserHandler);
 
   app.use(route, router);
 
-  console.log(`[API] Test routes registered`);
+  console.log(`[API] Database routes registered`);
 };
 
 module.exports = {
-  declareTestRoutes,
+  declareDatabaseRoutes,
 };
