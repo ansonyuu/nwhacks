@@ -7,7 +7,7 @@ npm run dev
 api docs:
 
 
-POST https://fadasdas.herokuapp.com/database/adduser:
+GET https://fadasdas.herokuapp.com/database/adduser:
 
 send a request to this endpoint. adds a new user to the mongodb. 
 
@@ -69,7 +69,7 @@ you will get:
 nothing
 ```
 
-POST https://fadasdas.herokuapp.com/createMatch
+GET https://fadasdas.herokuapp.com/createMatch/name
 
 if senior, will return the senior's video uuid. if youth, will be matched with a senior's video uuid.
 
