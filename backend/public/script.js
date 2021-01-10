@@ -3,7 +3,7 @@ const videoGrid = document.getElementById('video-grid')
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || "0.0.0.0";
 const myPeer = new Peer(undefined, {
-  host: "https://fadasdas.herokuapp.com/", // cutie what is this! did i do it wrong! why is it called fadasdas So u SEE. i was fustreated it aint workin so i made a new heroku witha rando name. however then it worked  cuB)tie you heccon broke! wasntme!
+  host: "https://fadasdas.herokuapp.com/", 
   port: 80
 })
 
