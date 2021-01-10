@@ -1,6 +1,7 @@
 const { User } = require("../../models/user")
 var MongoClient = require('mongodb').MongoClient; 
-const uri = "mongodb+srv://nwplus:nwplus@nwplus.wjwgj.mongodb.net/nwplus?retryWrites=true&w=majority"
+require('dotenv').config()
+uri = process.env.MONGO
 const { v4: uuidV4 } = require('uuid');
 
 async function createMatch (req, res) {

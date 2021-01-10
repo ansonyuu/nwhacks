@@ -1,6 +1,8 @@
 const { User } = require("../../models/user")
 var MongoClient = require('mongodb').MongoClient; 
 const { v4: uuidV4 } = require('uuid');
+require('dotenv').config()
+uri = process.env.MONGO
 
 const addUser = function (req, res) {
   var newUser = new User();
