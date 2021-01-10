@@ -19,6 +19,9 @@ var userSchema = new mongoose.Schema({
     interests: {
         type: [ String ], 
         required: true
+    },
+    videoRoom: {
+        type: String
     }
 });
 

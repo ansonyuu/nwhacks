@@ -1,14 +1,18 @@
-const { getMongoDb } = require("../../services/database")
 const { User } = require("../../models/user")
 var MongoClient = require('mongodb').MongoClient; 
+
+const { v4: uuidV4 } = require('uuid');
 
 const addUser = function (req, res) {
   var newUser = new User();
   newUser.name = req.body.name; 
-  newUser.role = req.body.role;
-  newUser.careHome = req.body.carehome ? req.body.carehome : "";
-  newUser.languages = req.body.langs ? req.body.langs : "";
+  newUser.role = req.body.role; // senior or young
+  newUser.careHome = req.body.careHome ? req.body.careHome : "";
+  newUser.languages = req.body.languages ? req.body.languages : "";
   newUser.interests = req.body.interests;
+  if(req.body.role == "senior") {
+    newUser.videoRoom = uuidV4(); //string
+  }
 
   MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
     if (err) throw err;
