@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
 import { Picker } from '@react-native-picker/picker';
+import { AiOutlineArrowRight } from 'react-icons/fa';
 
 export default function ({ navigation }) {
   let [fontsLoaded] = useFonts({
@@ -26,14 +27,13 @@ export default function ({ navigation }) {
 
         <View style={styles.spacer} />
         <TouchableOpacity
-          style={styles.button}
-          onPress={() =>
-            navigation.navigate("NameInput", { name: "NameInput" })
-          }
-        >
-          <View>
-            <Text style={styles.buttonText}>Next</Text>
-          </View>
+            key={language}
+            style={styles.buttonLight}
+            onPress={
+            () => {
+                navigation.navigate("NameInput", { name: "NameInput" })
+            }}>
+            <Text style={styles.buttonText} >Next <AiOutlineArrowRight/> </Text>
         </TouchableOpacity>
       </View>
     );

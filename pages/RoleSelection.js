@@ -28,6 +28,7 @@ export default function ({ navigation }) {
           </View>
         </TouchableOpacity>
         <View style={styles.spacer} />
+        
         <TouchableOpacity
           style={styles.button}
           onPress={() =>
@@ -37,6 +38,16 @@ export default function ({ navigation }) {
           <View>
             <Text style={styles.buttonText}>Volunteer</Text>
           </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+            key={language}
+            style={styles.buttonLight}
+            onPress={
+            () => {
+                navigation.navigate("HomeSelection", { name: "HomeSelection" })
+            }}>
+            <Text style={styles.buttonText} >Next <AiOutlineArrowRight/> </Text>
         </TouchableOpacity>
       </View>
     );

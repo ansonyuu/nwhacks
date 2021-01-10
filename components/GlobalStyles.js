@@ -114,6 +114,12 @@ const styles = StyleSheet.create({
         fontSize: 2.5 + 'rem'
     },
 
+    title: {
+        color: '#000',
+        fontFamily: 'Karla',
+        fontSize: 1.5 + 'rem'
+    },
+
     column: {
         display: 'flex',
         flexDirection: 'column',
@@ -124,6 +130,16 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         
+    },
+
+    imageRight: {
+        alignContent: 'center',
+        height: '30%',
+    },
+
+    imageLeft: {
+        alignContent: 'center',
+        height: '30%',
     }
 });
   
