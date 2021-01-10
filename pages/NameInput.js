@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
+import { AiOutlineArrowRight } from 'react-icons/fa';
 
   
 
@@ -26,16 +27,15 @@ export default function ({ navigation }) {
       value={value}
         />
         <View style={styles.spacer} />
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() =>
-              navigation.navigate("LanguageSelection", { name: "LanguageSelection" })
-            }
-          >
-            <View>
-              <Text style={styles.buttonText}>Next</Text>
-            </View>
-          </TouchableOpacity>
+            <TouchableOpacity
+            key={language}
+            style={styles.buttonNext}
+            onPress={
+            () => {
+                navigation.navigate("PracticeSelection", { name: "PracticeSelection" })
+            }}>
+            <Text style={styles.buttonText} >Next <AiOutlineArrowRight/> </Text>
+        </TouchableOpacity>
         </View>
       );
     }

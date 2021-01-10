@@ -16,7 +16,6 @@ import Loading from './pages/Loading';
 import Call from './pages/Call';
 
 
-const m = new Magic("pk_test_47443654F04B0D80");
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -30,6 +29,7 @@ export default function App() {
         <Stack.Screen name="NameInput" component={NameInput} />
         <Stack.Screen name="PracticeSelection" component={PracticeSelection} />
         <Stack.Screen name="InterestSelection" component={InterestSelection} />
+        <Stack.Screen name="Review" component={Review} />
         <Stack.Screen name="Loading" component={Loading} />
         <Stack.Screen name="Call" component={Call} />
       </Stack.Navigator>
