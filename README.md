@@ -14,18 +14,9 @@ send a request to this endpoint. adds a new user to the mongodb.
 it requires name, role, languages, interests
 ```
 send:
-{
-    "languages": [
-        "yeet"
-    ],
-    "interests": [
-        "sd1",
-        "2ds"
-    ],
-    "name": "yeet",
-    "role": "yeet",
-    "careHome": "carehome"
-}
+https://fadasdas.herokuapp.com/database/adduser/name/:name/role/:role/careHome/:careHome/interests/:interests/languages/:languages
+where interests is: item1,item2
+and languages is item1,item2
 
 you will get:
 nothing
@@ -36,9 +27,7 @@ GET https://fadasdas.herokuapp.com/database/finduser
 retrieve a user. all you need is their name
 ```
 send:
-{
-    "name": "yeet",
-}
+https://fadasdas.herokuapp.com/database/finduser/name
 
 you will get:
 {
@@ -86,9 +75,7 @@ if senior, will return the senior's video uuid. if youth, will be matched with a
 requires: name
 ```
 send:
-{
-    "name": "yeet"
-}
+https://fadasdas.herokuapp.com/createMatch/name
 
 you will get:
 redirected
