@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, ImageBackground } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
 
@@ -16,53 +16,36 @@ export default function ({ navigation }) {
       return <Text>Loading...</Text>;
     } else {    
       return (
-        
-        <View style={styles.container}>
-
-        <Text style={styles.title}>Language</Text>
-        <View style={styles.spacer} />
-            <View style={styles.row}>
-
-            <View>
-            {languages1.map(language =>
-            <View style={styles.column}>
-            <TouchableOpacity
-                key={language}
-                style={styles.buttonLight}
-                onPress={
-                () => {
-                    navigation.navigate("Landing", { name: "Landing" })
-                }
-                }
-            >
-                 <Text style={styles.buttonText} > {language} </Text>
-            </TouchableOpacity>
-            <View style={styles.spacer} />
-            </View >
-            )}</View>
-
-            <View>
-            {languages2.map(language =>
-            <View style={styles.column}>
-            <TouchableOpacity
-                key={language}
-                style={styles.buttonLight}
-                onPress={
-                () => {
-                    navigation.navigate("Landing", { name: "Landing" })
-                }
-                }
-            >
-                 <Text style={styles.buttonText} > {language} </Text>
-            </TouchableOpacity>
-            <View style={styles.spacer} />
-            </View >
-            )}
-        </View>
-
         <View>
-            {languages3.map(language =>
-            <View style={styles.column}>
+            <ImageBackground style={styles.background} source={require('../assets/PlainBackground.png')}>
+            <View style={styles.container}>
+            
+        
+            <Text style={styles.title}>Language</Text>
+            <View style={styles.spacer} />
+                <View style={styles.row}>
+
+                <View>
+                {languages1.map(language =>
+                <View style={styles.column}>
+                <TouchableOpacity
+                    key={language}
+                    style={styles.buttonLight}
+                    onPress={
+                    () => {
+                        navigation.navigate("Landing", { name: "Landing" })
+                    }
+                    }
+                >
+                    <Text style={styles.buttonText} > {language} </Text>
+                </TouchableOpacity>
+                <View style={styles.spacer} />
+                </View >
+                )}</View>
+
+                <View>
+                {languages2.map(language =>
+                <View style={styles.column}>
                 <TouchableOpacity
                     key={language}
                     style={styles.buttonLight}
@@ -77,8 +60,29 @@ export default function ({ navigation }) {
                 <View style={styles.spacer} />
                 </View >
                 )}
-                </View>
             </View>
+
+            <View>
+                {languages3.map(language =>
+                <View style={styles.column}>
+                    <TouchableOpacity
+                        key={language}
+                        style={styles.buttonLight}
+                        onPress={
+                        () => {
+                            navigation.navigate("Landing", { name: "Landing" })
+                        }
+                        }
+                    >
+                        <Text style={styles.buttonText} > {language} </Text>
+                    </TouchableOpacity>
+                    <View style={styles.spacer} />
+                    </View >
+                    )}
+                    </View>
+                </View>
+                </View>
+            </ImageBackground>
         </View>
 
       );

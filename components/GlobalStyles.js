@@ -4,7 +4,6 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -168,17 +167,18 @@ const styles = StyleSheet.create({
         
     },
 
-    imageRight: {
-        alignContent: 'center',
-        height: '30vh',
-        width: 'auto'
-        
-    },
+    linearGradient: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    }, 
 
-    imageLeft: {
-        alignContent: 'center',
-        height: '30vh',
-        width: 'auto'
+    background: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        width: 100 + 'vw',
+        height: 100 + 'vh'
     }
 });
   

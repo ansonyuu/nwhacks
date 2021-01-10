@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, View, Text, TouchableOpacity } from "react-native";
+import { Image, View, Text, TouchableOpacity, ImageBackground } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
 
@@ -14,9 +14,7 @@ export default function ({ navigation }) {
     return (
 
       <View>
-        <Image style={styles.imageLeft} source={require('../assets/landing-left.png')}/>
-        <Image style={styles.imageRight} source={require('../assets/landing-right.png')}/>
-
+        <ImageBackground style={styles.background} source={require('../assets/LoginBackground.png')}>
         <View style={styles.container}>
           <Text style={styles.title}>Welcome</Text>
           <View style={styles.spacer} />
@@ -45,6 +43,7 @@ export default function ({ navigation }) {
             </View>
           </TouchableOpacity>
         </View>
+        </ImageBackground>
       </View>
     );
   }

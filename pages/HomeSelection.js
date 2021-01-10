@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, ImageBackground } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
 import { Picker } from '@react-native-picker/picker';
@@ -16,7 +16,10 @@ export default function ({ navigation }) {
     return <Text>Loading...</Text>;
   } else {
     return (
+    <View>
+    <ImageBackground style={styles.background} source={require('../assets/HomeBackground.png')}>
       <View style={styles.container}>
+        
         <Text style={styles.title}>I stay at...</Text>
         <View style={styles.spacer} />
         
@@ -39,6 +42,8 @@ export default function ({ navigation }) {
                 <Text style={styles.nextButtonText} >Next</Text>
             </View>
         </TouchableOpacity>
+        </View>
+        </ImageBackground>
       </View>
     );
   }
