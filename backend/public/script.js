@@ -3,7 +3,7 @@ const videoGrid = document.getElementById('video-grid')
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || "0.0.0.0";
 const myPeer = new Peer(undefined, {
-  host: "https://fadasdas.herokuapp.com/", 
+  host: "fadasdas.herokuapp.com", 
   port: 80
 })
 
