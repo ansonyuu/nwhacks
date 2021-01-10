@@ -6,7 +6,7 @@ const { v4: uuidV4 } = require('uuid');
 
 async function createMatch (req, res) {
   var room_uuid = "string"
-  const name_to_find = req.body.name;
+  const name_to_find = req.params.name;
   var user_to_return = 'No user.'
 
 // take the user's name, find them, get their interests

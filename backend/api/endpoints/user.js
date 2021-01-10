@@ -6,12 +6,12 @@ uri = "mongodb+srv://nwplus:nwplus@nwplus.wjwgj.mongodb.net/nwplus?retryWrites=t
 
 const addUser = function (req, res) {
   var newUser = new User();
-  newUser.name = req.body.name; 
-  newUser.role = req.body.role; // senior or young
-  newUser.careHome = req.body.careHome ? req.body.careHome : "";
-  newUser.languages = req.body.languages ? req.body.languages : "";
-  newUser.interests = req.body.interests;
-  if(req.body.role == "senior") {
+  newUser.name = req.params.name; 
+  newUser.role = req.params.role; // senior or young
+  newUser.careHome = req.params.careHome ? req.params.careHome : "";
+  newUser.languages = req.params.languages ? (req.params.languages).split(",") : "";
+  newUser.interests = (req.params.interests).split(",");
+  if(req.params.role == "senior") {
     newUser.videoRoom = uuidV4(); //string
   }
 
@@ -33,8 +33,8 @@ const addUserHandler = async (req, res) => {
 async function updateUser(req) {
   const filter = { name: req.body.name };
   var updateDoc = {};
-  if (req.body.carehome) {
-    updateDoc['carehome'] = req.body.carehome
+  if (req.body.careHome) {
+    updateDoc['careHome'] = req.body.careHome
   }
 
   if (req.body.languages) {
@@ -69,7 +69,7 @@ const updateUserHandler = async (req, res) => {
 };
 
 async function findUser(req) {
-  const name_to_find = req.body.name;
+  const name_to_find = req.params.name;
   var user_to_return = 'No user.'
   const client = new MongoClient(uri,  { useUnifiedTopology: true });
   try {

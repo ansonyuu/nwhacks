@@ -16,9 +16,9 @@ const declareDatabaseRoutes = (app) => {
   const route = "/database";
   const router = Router(routerOptions);
 
-  router.post("/addUser", addUserHandler);
-  router.get("/findUser", findUserHandler);
-  router.post("/updateUser", updateUserHandler);
+  router.get("/adduser/name=:name/role=:role/careHome=:careHome/interests=:interests/languages=:languages", addUserHandler);
+  router.get("/finduser/:name", findUserHandler);
+  router.post("/updateuser", updateUserHandler);
 
   app.use(bodyParser.urlencoded({
     extended: true

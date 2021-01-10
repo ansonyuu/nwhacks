@@ -12,10 +12,10 @@ const routerOptions = {
  * @return {undefined}
  */
 const declareMatchRoutes = (app) => {
-  const route = "/createMatch";
+  const route = "/creatematch";
   const router = Router(routerOptions);
 
-  router.post("/", createMatchHandler);
+  router.get("/:name", createMatchHandler);
 
   app.use(route, router);
 
