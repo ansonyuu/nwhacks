@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient'
 
 
 const styles = StyleSheet.create({
@@ -13,8 +12,8 @@ const styles = StyleSheet.create({
     button: {
         zIndex: 10,
       backgroundColor: '#EFDFBB',
-      paddingVertical: 30,
-      width: 400,
+      paddingVertical: 20,
+      width: 350,
       alignItems: 'center',
       justifyContent: 'center',
       shadowColor: "#000",
@@ -37,6 +36,74 @@ const styles = StyleSheet.create({
         fontSize: 2 + 'rem'
     },
 
+    buttonLight: {
+        zIndex: 10,
+
+        borderColor: '#906A55',
+        borderWidth: 5,
+        paddingVertical: 30,
+        width: 250,
+        height: 75,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+        borderRadius: 10,
+
+        '&:hover': {
+            backgroundColor: '#000',
+        },
+    },
+
+    picker: {
+        backgroundColor: '#F5F6F1',
+        fontFamily: 'Karla',
+        fontSize: 2 + 'rem',
+        borderWidth: 0,
+        padding: 10,
+        zIndex: 10,
+        width: 500,
+        height: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+        borderRadius: 10,
+    },
+
+    input: {
+        backgroundColor: '#F5F6F1',
+        fontFamily: 'Karla',
+        fontSize: 2 + 'rem',
+        borderWidth: 0,
+        borderBottomWidth: 5,
+        borderColor: '#906A55',
+        padding: 10,
+        zIndex: 10,
+        width: 500,
+        height: 100,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+        borderRadius: 10,
+    },
+
     spacer: {
         height: 2 + 'rem'
     },
@@ -45,6 +112,18 @@ const styles = StyleSheet.create({
         color: '#000',
         fontFamily: 'Karla',
         fontSize: 2.5 + 'rem'
+    },
+
+    column: {
+        display: 'flex',
+        flexDirection: 'column',
+        marginRight: 10
+    },
+
+    row: {
+        display: 'flex',
+        flexDirection: 'row',
+        
     }
 });
   

@@ -1,10 +1,7 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
-import { Magic } from "@magic-sdk/react-native";
-
-const m = new Magic("pk_test_47443654F04B0D80");
 
 export default function ({ navigation }) {
   let [fontsLoaded] = useFonts({
@@ -16,8 +13,19 @@ export default function ({ navigation }) {
   } else {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Welcome</Text>
+        <Text style={styles.title}>Login</Text>
         <View style={styles.spacer} />
+
+        <Text style={globalStyles.text}>Email</Text>
+        <TextInput
+              style={globalStyles.textInput}
+              placeholder="Email"
+              placeholderTextColor="#F3BA77"
+              onChangeText={(text) => this.setState({ email: text })}
+              textContentType="emailAddress"
+              autoCapitalize="none"
+        />
+
         <TouchableOpacity
           style={styles.button}
           onPress={
@@ -27,22 +35,12 @@ export default function ({ navigation }) {
             }
           }
         >
-          <m.Relayer />
           <View>
             <Text style={styles.buttonText}>Login</Text>
           </View>
         </TouchableOpacity>
         <View style={styles.spacer} />
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() =>
-            navigation.navigate("RoleSelection", { name: "RoleSelection" })
-          }
-        >
-          <View>
-            <Text style={styles.buttonText}>Sign Up</Text>
-          </View>
-        </TouchableOpacity>
+        
       </View>
     );
   }
