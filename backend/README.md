@@ -9,7 +9,7 @@ you might need to install nodemon
 api docs:
 
 ```
-POST /database/adduser:
+POST https://fadasdas.herokuapp.com/database/adduser:
 
 send:
 {
@@ -30,7 +30,7 @@ nothing
 ```
 
 ```
-GET /database/finduser
+GET https://fadasdas.herokuapp.com/database/finduser
 
 send:
 {
@@ -53,7 +53,7 @@ you will get:
 ```
 
 ```
-POST /database/updateuser
+POST https://fadasdas.herokuapp.com/database/updateUser
 
 send:
 {
@@ -74,7 +74,7 @@ nothing
 ```
 
 ```
-POST /createMatch
+POST https://fadasdas.herokuapp.com/createMatch
 send:
 {
     "languages": [
