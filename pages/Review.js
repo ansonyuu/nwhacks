@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Icon } from "react-native";
+import { View, Text, TouchableOpacity, ImageBackground } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
 import axios from 'axios'
@@ -37,6 +37,8 @@ export default function ({ navigation }) {
     return <Text>Review your Profle</Text>;
   } else {
     return ( 
+    <View>
+    <ImageBackground style={styles.background} source={require('../assets/PlainBackground.png')}>
     <View style={styles.container}>
         
 
@@ -51,7 +53,8 @@ export default function ({ navigation }) {
                  {/* <Icon name="arrow-right" type="feather"/>  */}
             </View>
         </TouchableOpacity>
-        
+        </View>
+        </ImageBackground>
     </View>)
   }
 }

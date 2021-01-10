@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, TextInput, ImageBackground } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
 import { store } from "../App"
@@ -15,7 +15,12 @@ export default function ({ navigation }) {
       return <Text>Loading...</Text>;
     } else {
       return (
+        <View>
+        <ImageBackground style={styles.background} source={require('../assets/PlainBackground.png')}>
         <View style={styles.container}>
+
+        
+            <View>
           <Text style={styles.title}>What is your name?</Text>
           <View style={styles.spacer} />
 
@@ -35,6 +40,9 @@ export default function ({ navigation }) {
                 
             </View>
         </TouchableOpacity>
+        </View>
+        </View>
+        </ImageBackground>
         </View>
       );
     }
