@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Icon } from "react-native";
+import { View, Text, TouchableHighlight, TouchableOpacity } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
+import { store } from '../App'
  
 
 export default function ({ navigation }) {
@@ -29,17 +30,17 @@ export default function ({ navigation }) {
             <View>
             {languages1.map(language =>
             <View style={styles.column}>
-            <TouchableOpacity
+            <TouchableHighlight
                 key={language}
                 style={styles.buttonLight}
                 onPress={
                 () => {
-                    navigation.navigate("InterestSelection", { name: "InterestSelection" })
+                    store.dispatch({type:'setPractice', value: language})
                 }
                 }
             >
                  <Text style={styles.smallButtonText} > {language} </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
             <View style={styles.spacer} />
             </View >
             )}</View>
@@ -47,17 +48,17 @@ export default function ({ navigation }) {
             <View>
             {languages2.map(language =>
             <View style={styles.column}>
-            <TouchableOpacity
+            <TouchableHighlight
                 key={language}
                 style={styles.buttonLight}
                 onPress={
                 () => {
-                    navigation.navigate("InterestSelection", { name: "InterestSelection" })
+                    store.dispatch({type:'setPractice', value: language})
                 }
                 }
             >
                  <Text style={styles.smallButtonText} > {language} </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
             <View style={styles.spacer} />
             </View >
             )}
@@ -66,17 +67,17 @@ export default function ({ navigation }) {
         <View>
             {languages3.map(language =>
             <View style={styles.column}>
-                <TouchableOpacity
+                <TouchableHighlight
                     key={language}
                     style={styles.buttonLight}
                     onPress={
                     () => {
-                        navigation.navigate("InterestSelection", { name: "InterestSelection" })
+                        store.dispatch({type:'setPractice', value: language})
                     }
                     }
                 >
                     <Text style={styles.smallButtonText} > {language} </Text>
-                </TouchableOpacity>
+                </TouchableHighlight>
                 <View style={styles.spacer} />
                 </View >
                 )}
@@ -85,13 +86,13 @@ export default function ({ navigation }) {
 
         <TouchableOpacity
 
-            style={styles.buttonLight}
+            style={styles.buttonNext}
             onPress={
             () => {
                 navigation.navigate("InterestSelection", { name: "InterestSelection" })
             }}>
             <View>
-                <Text style={styles.buttonText} >Next</Text>
+                <Text style={styles.nextButtonText} >Next</Text>
                  {/* <Icon name="arrow-right" type="feather"/>  */}
             </View>
         </TouchableOpacity>

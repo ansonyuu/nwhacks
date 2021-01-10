@@ -2,15 +2,11 @@ import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
-import { Context } from './Global'
-
+import { store } from "../App"
   
 
 export default function ({ navigation }) {
 
-    const [state, setState] = useContext(Context)
-
-    console.log(state.name)
 
     let [fontsLoaded] = useFonts({
       Karla: require("../assets/fonts/Karla-SemiBold.ttf"),
@@ -25,7 +21,7 @@ export default function ({ navigation }) {
 
           <TextInput
             style={styles.input}
-            onChangeText={(text) => this.setState({ name: text })}
+            onChangeText={(text) => store.dispatch({type:'setName', value: text})}
         />
         <View style={styles.spacer} />
             <TouchableOpacity
@@ -35,7 +31,7 @@ export default function ({ navigation }) {
                 navigation.navigate("PracticeSelection", { name: "PracticeSelection" })
             }}>
             <View>
-                <Text style={styles.buttonText} >Next</Text>
+                <Text style={styles.nextButtonText} >Next</Text>
                 
             </View>
         </TouchableOpacity>

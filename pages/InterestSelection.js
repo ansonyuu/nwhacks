@@ -1,8 +1,9 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Icon } from "react-native";
+import { View, Text, TouchableOpacity, TouchableHighlight } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
- 
+import { store } from "../App"
+
 
 export default function ({ navigation }) {
 
@@ -31,17 +32,17 @@ export default function ({ navigation }) {
             <View>
             {interest1.map(interest =>
             <View style={styles.column}>
-            <TouchableOpacity
+            <TouchableHighlight
                 key={interest}
                 style={styles.buttonLight}
                 onPress={
                 () => {
-                    navigation.navigate("Loading", { name: "Loading" })
+                    store.dispatch({type:'setInterests', value: interest})
                 }
                 }
             >
                  <Text style={styles.buttonText} > {interest} </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
             <View style={styles.spacer} />
             </View >
             )}</View>
@@ -49,17 +50,17 @@ export default function ({ navigation }) {
             <View>
             {interest2.map(interest =>
             <View style={styles.column}>
-            <TouchableOpacity
+            <TouchableHighlight
                 key={interest}
                 style={styles.buttonLight}
                 onPress={
                 () => {
-                    navigation.navigate("Loading", { name: "Loading" })
+                    store.dispatch({type:'setInterests', value: interest})
                 }
                 }
             >
                  <Text style={styles.buttonText} > {interest} </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
             <View style={styles.spacer} />
             </View >
             )}
@@ -68,17 +69,17 @@ export default function ({ navigation }) {
         <View>
             {interest3.map(interest =>
             <View style={styles.column}>
-            <TouchableOpacity
+            <TouchableHighlight
                 key={interest}
                 style={styles.buttonLight}
                 onPress={
                 () => {
-                    navigation.navigate("Loading", { name: "Loading" })
+                    store.dispatch({type:'setInterests', value: interest})
                 }
                 }
             >
                  <Text style={styles.buttonText} > {interest} </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
             <View style={styles.spacer} />
             </View >
             )}
@@ -86,13 +87,13 @@ export default function ({ navigation }) {
         </View>
 
         <TouchableOpacity
-            style={styles.buttonLight}
+            style={styles.buttonNext}
             onPress={
             () => {
                 navigation.navigate("Review", { name: "Review" })
             }}>
             <View>
-                <Text style={styles.buttonText} >Next</Text>
+                <Text style={styles.nextButtonText} >Next</Text>
                  {/* <Icon name="arrow-right" type="feather"/>  */}
             </View>
         </TouchableOpacity>
