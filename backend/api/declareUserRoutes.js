@@ -7,7 +7,7 @@ const routerOptions = {
 };
 
 /**
- * Adds test routes to the provided app.
+ * Adds user routes to the provided app.
  * @param  {Express} app  Express app for current server.
  * @return {undefined}
  */
