@@ -15,7 +15,7 @@ const declareMatchRoutes = (app) => {
   const route = "/createMatch";
   const router = Router(routerOptions);
 
-  router.get("/", createMatchHandler);
+  router.post("/", createMatchHandler);
 
   app.use(route, router);
 
