@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 const initialState = {
-    name: '',
+    name: 'Billy bob joe',
     hobbies: [],
     language: [],
  };
 
-export const Context = React.creatContext()
+export const Context = React.createContext()
 
 const Store = ({ children }) => {
     const [state, setState] = useState(initialState)

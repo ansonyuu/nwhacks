@@ -36,7 +36,7 @@ export default function ({ navigation }) {
                 style={styles.buttonLight}
                 onPress={
                 () => {
-                    navigation.navigate("Landing", { name: "Landing" })
+                    navigation.navigate("Loading", { name: "Loading" })
                 }
                 }
             >
@@ -54,7 +54,7 @@ export default function ({ navigation }) {
                 style={styles.buttonLight}
                 onPress={
                 () => {
-                    navigation.navigate("Landing", { name: "Landing" })
+                    navigation.navigate("Loading", { name: "Loading" })
                 }
                 }
             >
