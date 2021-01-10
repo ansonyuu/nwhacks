@@ -9,11 +9,10 @@ you might need to install nodemon
 api docs:
 
 ```
-/database/adduser:
+POST /database/adduser:
 
 send:
 {
-    "_id": "5ffa77c186ee6145e02d1797",
     "languages": [
         "yeet"
     ],
@@ -72,4 +71,23 @@ send:
 
 you will get:
 nothing
+```
+
+```
+POST /createMatch
+send:
+{
+    "languages": [
+        "yeet"
+    ],
+    "interests": [
+        "sd1",
+        "2ds"
+    ],
+    "name": "yeet",
+    "role": "yeet",
+}
+
+you will get:
+redirected
 ```
