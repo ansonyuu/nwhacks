@@ -1,3 +1,4 @@
+const request = require("supertest");
 const { app } = require("../../index");
 const { declareMatchRoutes } = require("../../api/declareMatchRoutes")
 const { declareDatabaseRoutes } = require("../../api/declareUserRoutes")
