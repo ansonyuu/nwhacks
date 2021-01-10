@@ -28,7 +28,3 @@ var User = mongoose.model('user', userSchema);
 module.exports = {
     User
 }
-
-// module.exports.get = function (callback, limit) {
-//     Contact.find(callback).limit(limit);
-// }
