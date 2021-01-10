@@ -16,13 +16,13 @@ export default function ({ navigation }) {
         <Text style={styles.title}>Loading...</Text>
 
         <TouchableOpacity
-            style={styles.buttonLight}
+            style={styles.buttonNext}
             onPress={
             () => {
                 navigation.navigate("Call", { name: "Call" })
             }}>
             <View>
-                <Text style={styles.buttonText} >Next</Text>
+                <Text style={styles.nextButtonText} >Next</Text>
                  {/* <Icon name="arrow-right" type="feather"/>  */}
             </View>
         </TouchableOpacity>

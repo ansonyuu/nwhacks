@@ -42,11 +42,41 @@ const styles = StyleSheet.create({
         fontSize: 1.5 + 'rem'
     },
 
+    nextButtonText: {
+        color: '#242424',
+        fontFamily: 'Karla',
+        fontSize: 2 + 'rem'
+    },
+
     buttonLight: {
         zIndex: 10,
 
         borderColor: '#906A55',
         borderWidth: 5,
+        paddingVertical: 30,
+        width: 250,
+        height: 75,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+        borderRadius: 10,
+
+        '&:hover': {
+            backgroundColor: '#000',
+        },
+    },
+
+    buttonNext: {
+        zIndex: 10,
+
+        backgroundColor: '#F5F6F1',
+        borderWidth: 0,
         paddingVertical: 30,
         width: 250,
         height: 75,
