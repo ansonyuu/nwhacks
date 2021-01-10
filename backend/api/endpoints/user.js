@@ -33,8 +33,8 @@ const addUserHandler = async (req, res) => {
 async function updateUser(req) {
   const filter = { name: req.body.name };
   var updateDoc = {};
-  if (req.body.carehome) {
-    updateDoc['carehome'] = req.body.carehome
+  if (req.body.careHome) {
+    updateDoc['carehome'] = req.body.careHome
   }
 
   if (req.body.languages) {
