@@ -35,19 +35,33 @@ declareDatabaseRoutes(app);
 declareMatchRoutes(app);
 
 io.on('connection', socket => {
+    console.log("new user")
   socket.on('join-room', (roomId, userId) => {
     socket.join(roomId)
+    console.log("jion room" + userId)
     socket.to(roomId).broadcast.emit('user-connected', userId)
-    console.log("new user")
 
-    socket.on('disconnect', () => {
+    socket.on('disconnect', (userId) => {
+        console.log("left")
       socket.to(roomId).broadcast.emit('user-disconnected', userId)
-      console.log("left")
     })
   })
 })
 
 server.listen(PORT);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
