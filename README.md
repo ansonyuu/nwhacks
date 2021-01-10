@@ -12,9 +12,10 @@ POST https://fadasdas.herokuapp.com/database/adduser:
 send a request to this endpoint. adds a new user to the mongodb. 
 
 it requires name, role, languages, interests
+ex: https://fadasdas.herokuapp.com/database/adduser/name=lucy/role=senior/careHome=BS/interests=cats,dogs/languages=english,chinese
 ```
 send:
-https://fadasdas.herokuapp.com/database/adduser/name/:name/role/:role/careHome/:careHome/interests/:interests/languages/:languages
+/adduser/name=:name/role=:role/careHome=:careHome/interests=:interests/languages=:languages
 where interests is: item1,item2
 and languages is item1,item2
 
