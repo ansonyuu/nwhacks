@@ -2,7 +2,7 @@ const { User } = require("../../models/user")
 var MongoClient = require('mongodb').MongoClient; 
 const { v4: uuidV4 } = require('uuid');
 require('dotenv').config()
-uri = process.env.MONGO
+uri = "mongodb+srv://nwplus:nwplus@nwplus.wjwgj.mongodb.net/nwplus?retryWrites=true&w=majority"
 
 const addUser = function (req, res) {
   var newUser = new User();
