@@ -16,7 +16,7 @@ const declareDatabaseRoutes = (app) => {
   const route = "/database";
   const router = Router(routerOptions);
 
-  router.post("/adduser/name/:name/role/:role/careHome/:careHome/interests/:interests/languages/:languages", addUserHandler);
+  router.post("/adduser/name=:name/role=:role/careHome=:careHome/interests=:interests/languages=:languages", addUserHandler);
   router.get("/finduser/:name", findUserHandler);
   router.post("/updateuser", updateUserHandler);
 
