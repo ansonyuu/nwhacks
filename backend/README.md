@@ -40,7 +40,6 @@ send:
 
 you will get:
 {
-    "_id": "5ffa77c186ee6145e02d1797",
     "languages": [
         "yeet"
     ],
@@ -59,7 +58,6 @@ POST /database/updateuser
 
 send:
 {
-    "_id": "5ffa77c186ee6145e02d1797",
     "languages": [
         "yeet"
     ],
