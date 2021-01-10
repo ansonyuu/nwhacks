@@ -14,6 +14,19 @@ export default function ({ navigation }) {
     return ( 
     <View style={styles.container}>
         <Text style={styles.title}>Loading...</Text>
+
+        <TouchableOpacity
+            style={styles.buttonLight}
+            onPress={
+            () => {
+                navigation.navigate("Call", { name: "Call" })
+            }}>
+            <View>
+                <Text style={styles.buttonText} >Next</Text>
+                 {/* <Icon name="arrow-right" type="feather"/>  */}
+            </View>
+        </TouchableOpacity>
+        
     </View>)
   }
 }

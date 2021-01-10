@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Icon } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
-import { AiOutlineArrowRight } from 'react-icons/fa';
+ 
 
 export default function ({ navigation }) {
 
@@ -38,7 +38,7 @@ export default function ({ navigation }) {
                 }
                 }
             >
-                 <Text style={styles.buttonText} > {language} </Text>
+                 <Text style={styles.smallButtonText} > {language} </Text>
             </TouchableOpacity>
             <View style={styles.spacer} />
             </View >
@@ -56,7 +56,7 @@ export default function ({ navigation }) {
                 }
                 }
             >
-                 <Text style={styles.buttonText} > {language} </Text>
+                 <Text style={styles.smallButtonText} > {language} </Text>
             </TouchableOpacity>
             <View style={styles.spacer} />
             </View >
@@ -75,7 +75,7 @@ export default function ({ navigation }) {
                     }
                     }
                 >
-                    <Text style={styles.buttonText} > {language} </Text>
+                    <Text style={styles.smallButtonText} > {language} </Text>
                 </TouchableOpacity>
                 <View style={styles.spacer} />
                 </View >
@@ -84,13 +84,16 @@ export default function ({ navigation }) {
         </View>
 
         <TouchableOpacity
-            key={language}
+
             style={styles.buttonLight}
             onPress={
             () => {
                 navigation.navigate("InterestSelection", { name: "InterestSelection" })
             }}>
-            <Text style={styles.buttonText} >Next <AiOutlineArrowRight/> </Text>
+            <View>
+                <Text style={styles.buttonText} >Next</Text>
+                 {/* <Icon name="arrow-right" type="feather"/>  */}
+            </View>
         </TouchableOpacity>
 
         </View>
