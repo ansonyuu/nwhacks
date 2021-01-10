@@ -1,15 +1,16 @@
-const request = require("supertest");
 const { app } = require("../../index");
-const { declareTestRoutes } = require("../../api/declareRoutes");
+const { declareMatchRoutes } = require("../../api/declareMatchRoutes")
+const { declareDatabaseRoutes } = require("../../api/declareUserRoutes")
 
 beforeAll(() => {
-  declareTestRoutes(app);
+  declareMatchRoutes(app);
+  declareDatabaseRoutes(app);
 });
 
-describe("Integration Test Example", () => {
-  test("It should response the GET method", done => {
+describe("Test creatematch", () => {
+  test("It should response the POST method", done => {
     request(app)
-      .get("/test")
+      .post("/creatematch/kate")
       .then(response => {
         expect(response.statusCode).toBe(200);
         done();
