@@ -2,6 +2,7 @@ const { getMongoDb } = require("../../services/database")
 const { User } = require("../../models/user")
 var MongoClient = require('mongodb').MongoClient; 
 
+
 const addUser = function (req, res) {
   var newUser = new User();
   newUser.name = req.body.name; 
@@ -77,3 +78,4 @@ module.exports = {
   findUser,
   findUserHandler
 };
+
