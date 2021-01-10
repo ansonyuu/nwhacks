@@ -1,5 +1,6 @@
 const { Router } = require("express");
-const { addUserHandler } = require("./endpoints/user");
+const { addUserHandler, findUserHandler, updateUserHandler } = require("./endpoints/user");
+let bodyParser = require('body-parser');
 
 const routerOptions = {
   mergeParams: true,
@@ -15,8 +16,14 @@ const declareDatabaseRoutes = (app) => {
   const route = "/database";
   const router = Router(routerOptions);
 
-  router.get("/addNewUser", addUserHandler);
+  router.post("/addUser", addUserHandler);
+  router.get("/findUser", findUserHandler);
+  router.post("/updateUser", updateUserHandler);
 
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+  app.use(bodyParser.json());
   app.use(route, router);
 
   console.log(`[API] Database routes registered`);

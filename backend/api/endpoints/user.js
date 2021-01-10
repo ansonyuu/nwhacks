@@ -1,50 +1,75 @@
-/**
- * Example helper function with no arguments.
- * @return {String} 'Hello world!'.
- */
-const addUser = () => "Add User!";
+const { getMongoDb } = require("../../services/database")
+const { User } = require("../../models/user")
 
-/**
- * Example handler for handling a given function.
- * @param {Request} req Request received by the server.
- * @param {Response} res Response to be sent to the user.
- * @return {undefined}
- */
+var mongo = require("mongodb")
+
+const addUser = function (req, res) {
+  var newUser = new User();
+  newUser.name = req.body.name; 
+  newUser.role = req.body.role;
+  newUser.careHome = req.body.carehome ? req.body.carehome : "";
+  newUser.languages = req.body.langs ? req.body.langs : "";
+  newUser.interests = req.body.interests;
+
+  // mongo.connect(uri, {useUnifiedTopology: true}, function (err, db) {
+  //   if (err) {
+  //     console.log(err)
+  //   }
+
+  //   db.collection("users").insertOne(newUser, function(err, result) {
+  //     if (err) {
+  //       console.log(err)
+  //     }
+  //     console.log("user added", result)
+  //     db.close()
+  //   })
+  // })
+  return newUser.interests
+};
+
 const addUserHandler = async (req, res) => {
-  res.status(200).send(addUser());
+  res.status(200).send(addUser(req, res))
 };
 
+const updateUser = function (req, res) {
+  var newUser = new User();
+  newUser.name = req.body.name; 
+  newUser.role = req.body.role;
+  newUser.careHome = req.body.carehome ? req.body.carehome : "";
+  newUser.languages = req.body.langs ? req.body.langs : "";
+  newUser.interests = req.body.interests;
 
-/**
- * Example helper function with no arguments.
- * @return {String} 'Hello world!'.
- */
-const updateUser = () => "Update User!";
+  // mongo.connect(uri, {useUnifiedTopology: true}, function (err, db) {
+  //   if (err) {
+  //     console.log(err)
+  //   }
 
-/**
- * Example handler for handling a given function.
- * @param {Request} req Request received by the server.
- * @param {Response} res Response to be sent to the user.
- * @return {undefined}
- */
+  //   db.collection("users").insertOne(newUser, function(err, result) {
+  //     if (err) {
+  //       console.log(err)
+  //     }
+  //     console.log("user added", result)
+  //     db.close()
+  //   })
+  // })
+  return newUser.languages
+};
+
 const updateUserHandler = async (req, res) => {
-  res.status(200).send(updateUser());
+  res.status(200).send(updateUser(req, res));
 };
 
-/**
- * Example helper function with no arguments.
- * @return {String} 'Hello world!'.
- */
-const findUser = () => "Find User!";
+const findUser = function (req, res) {
+  var name_to_find = req.body.name; 
+  mongo.connect(uri, {useUnifiedTopology: true}, function (err, db) {
+    if (err) {
+      res.send(err);
+    }
+  })
+};
 
-/**
- * Example handler for handling a given function.
- * @param {Request} req Request received by the server.
- * @param {Response} res Response to be sent to the user.
- * @return {undefined}
- */
 const findUserHandler = async (req, res) => {
-  res.status(200).send(findUser());
+  res.status(200).send(findUser(req, res));
 };
 
 

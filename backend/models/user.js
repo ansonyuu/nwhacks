@@ -1,11 +1,34 @@
 var mongoose = require('mongoose')
 
-var User = mongoose.Schema;
+var userSchema = new mongoose.Schema({
+    name: {
+        type: String,
+    required: true
+    },
+    role: {
+        type: String,
+        required: true
+    }, 
+    careHome: {
+        type: String
+    },
+    languages: {
+        type: [ String ], 
+        required: true,
+    },
+    interests: {
+        type: [ String ], 
+        required: true
+    }
+});
 
-var userSchema = new User({
-    name: String,
-    interests: [ String ]
-})
+// Export Contact model
+var User = mongoose.model('user', userSchema);
 
-// compile model
-var userModel = mongoose.model('UserModel', userSchema);
+module.exports = {
+    User
+}
+
+// module.exports.get = function (callback, limit) {
+//     Contact.find(callback).limit(limit);
+// }
