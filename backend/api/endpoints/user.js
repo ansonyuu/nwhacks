@@ -50,6 +50,7 @@ const updateUserHandler = async (req, res) => {
 };
 
 async function findUser(req) {
+  const name_to_find = req.body.name;
   var user_to_return = 'No user.'
   const client = new MongoClient(uri,  { useUnifiedTopology: true });
   try {
@@ -57,7 +58,7 @@ async function findUser(req) {
     const db = client.db("nwplus")
     const collection = db.collection("users")
 
-    const query = {name: "lucy"}
+    const query = {name: name_to_find}
     user_to_return = await collection.findOne(query);
     console.log(user_to_return)
   } finally {
