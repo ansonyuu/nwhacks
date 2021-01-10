@@ -3,7 +3,9 @@ const { app } = require("../../index");
 const { declareTestRoutes } = require("../../api/declareRoutes");
 
 beforeAll(() => {
-  declareTestRoutes(app);
+  declareMatchRoutes(app);
+  declareDatabaseRoutes(app);
+  jest.useFakeTimers(); 
 });
 
 describe("Integration Test Example", () => {
