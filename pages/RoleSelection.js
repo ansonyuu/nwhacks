@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Icon } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
 
@@ -39,15 +39,17 @@ export default function ({ navigation }) {
             <Text style={styles.buttonText}>Volunteer</Text>
           </View>
         </TouchableOpacity>
-
+        <View style={styles.spacer} />
         <TouchableOpacity
-            key={language}
             style={styles.buttonLight}
             onPress={
             () => {
                 navigation.navigate("HomeSelection", { name: "HomeSelection" })
             }}>
-            <Text style={styles.buttonText} >Next <AiOutlineArrowRight/> </Text>
+            <View>
+                <Text style={styles.buttonText} >Next</Text>
+                {/*  {/* <Icon name="arrow-right" type="feather"/>  */}
+            </View>
         </TouchableOpacity>
       </View>
     );

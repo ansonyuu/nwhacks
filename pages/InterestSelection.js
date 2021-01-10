@@ -1,14 +1,14 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Icon } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
-import { AiOutlineArrowRight } from 'react-icons/fa';
+ 
 
 export default function ({ navigation }) {
 
-    const languages1 = ['Photography', 'Sports', 'Art']
-    const languages2 = [ 'Cooking', 'Knitting', 'Writing']
-    const languages3 = [ 'Knitting', 'Books', 'Gardening']
+    const interest1 = ['Photography', 'Sports', 'Art']
+    const interest2 = [ 'Cooking', 'Knitting', 'Writing']
+    const interest3 = [ 'Knitting', 'Books', 'Gardening']
 
     let [fontsLoaded] = useFonts({
       Karla: require("../assets/fonts/Karla-SemiBold.ttf"),
@@ -20,15 +20,19 @@ export default function ({ navigation }) {
         
         <View style={styles.container}>
 
-        <Text style={styles.title}>Language</Text>
+
+        <Text style={styles.title}>What are some things you like?</Text>
+        <View style={styles.spacer} />
+        <Text style={styles.subtitle}>You will be matched with people with similar interests!</Text>
+
         <View style={styles.spacer} />
             <View style={styles.row}>
 
             <View>
-            {languages1.map(language =>
+            {interest1.map(interest =>
             <View style={styles.column}>
             <TouchableOpacity
-                key={language}
+                key={interest}
                 style={styles.buttonLight}
                 onPress={
                 () => {
@@ -36,17 +40,17 @@ export default function ({ navigation }) {
                 }
                 }
             >
-                 <Text style={styles.buttonText} > {language} </Text>
+                 <Text style={styles.buttonText} > {interest} </Text>
             </TouchableOpacity>
             <View style={styles.spacer} />
             </View >
             )}</View>
 
             <View>
-            {languages2.map(language =>
+            {interest2.map(interest =>
             <View style={styles.column}>
             <TouchableOpacity
-                key={language}
+                key={interest}
                 style={styles.buttonLight}
                 onPress={
                 () => {
@@ -54,24 +58,45 @@ export default function ({ navigation }) {
                 }
                 }
             >
-                 <Text style={styles.buttonText} > {language} </Text>
+                 <Text style={styles.buttonText} > {interest} </Text>
             </TouchableOpacity>
             <View style={styles.spacer} />
             </View >
             )}
         </View>
 
+        <View>
+            {interest3.map(interest =>
+            <View style={styles.column}>
+            <TouchableOpacity
+                key={interest}
+                style={styles.buttonLight}
+                onPress={
+                () => {
+                    navigation.navigate("Loading", { name: "Loading" })
+                }
+                }
+            >
+                 <Text style={styles.buttonText} > {interest} </Text>
+            </TouchableOpacity>
+            <View style={styles.spacer} />
+            </View >
+            )}
+        </View>
+        </View>
+
         <TouchableOpacity
-            key={language}
             style={styles.buttonLight}
             onPress={
             () => {
-                navigation.navigate("InterestSelection", { name: "InterestSelection" })
+                navigation.navigate("Review", { name: "Review" })
             }}>
-            <Text style={styles.buttonText} >Next <AiOutlineArrowRight/> </Text>
+            <View>
+                <Text style={styles.buttonText} >Next</Text>
+                 {/* <Icon name="arrow-right" type="feather"/>  */}
+            </View>
         </TouchableOpacity>
-        
-        </View>
+
         </View>
       );
     }

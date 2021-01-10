@@ -29,7 +29,6 @@ export default function ({ navigation }) {
               }
             }
           >
-            <m.Relayer />
             <View>
               <Text style={styles.buttonText}>Login</Text>
             </View>

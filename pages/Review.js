@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Icon } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
-import { AiOutlineArrowRight } from 'react-icons/fa';
+ 
 
 export default function ({ navigation }) {
   let [fontsLoaded] = useFonts({
@@ -16,13 +16,15 @@ export default function ({ navigation }) {
     <View style={styles.container}>
         
         <TouchableOpacity
-            key={language}
             style={styles.buttonLight}
             onPress={
             () => {
-                navigation.navigate("InterestSelection", { name: "InterestSelection" })
+                navigation.navigate("Loading", { name: "Loading" })
             }}>
-            <Text style={styles.buttonText} >Next <AiOutlineArrowRight/> </Text>
+            <View>
+                <Text style={styles.buttonText} >Next</Text>
+                 {/* <Icon name="arrow-right" type="feather"/>  */}
+            </View>
         </TouchableOpacity>
         
     </View>)

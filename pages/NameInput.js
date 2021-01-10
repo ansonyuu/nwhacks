@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import styles from "../components/GlobalStyles";
 import { useFonts } from "expo-font";
-import { AiOutlineArrowRight } from 'react-icons/fa';
+import { Context } from './Global'
 
   
 
@@ -23,18 +23,20 @@ export default function ({ navigation }) {
 
           <TextInput
       style={styles.input}
-      onChangeText={text => onChangeText(text)}
+      onChangeText={handleClick}
       value={value}
         />
         <View style={styles.spacer} />
             <TouchableOpacity
-            key={language}
             style={styles.buttonNext}
             onPress={
             () => {
                 navigation.navigate("PracticeSelection", { name: "PracticeSelection" })
             }}>
-            <Text style={styles.buttonText} >Next <AiOutlineArrowRight/> </Text>
+            <View>
+                <Text style={styles.buttonText} >Next</Text>
+                
+            </View>
         </TouchableOpacity>
         </View>
       );

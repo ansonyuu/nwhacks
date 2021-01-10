@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
         fontSize: 2 + 'rem'
     },
 
+    smallButtonText: {
+        color: '#906A55',
+        fontFamily: 'Karla',
+        fontSize: 1.5 + 'rem'
+    },
+
     buttonLight: {
         zIndex: 10,
 
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
         fontSize: 2.5 + 'rem'
     },
 
-    title: {
+    subtitle: {
         color: '#000',
         fontFamily: 'Karla',
         fontSize: 1.5 + 'rem'
@@ -134,12 +140,15 @@ const styles = StyleSheet.create({
 
     imageRight: {
         alignContent: 'center',
-        height: '30%',
+        height: '30vh',
+        width: 'auto'
+        
     },
 
     imageLeft: {
         alignContent: 'center',
-        height: '30%',
+        height: '30vh',
+        width: 'auto'
     }
 });
   
