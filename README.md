@@ -8,7 +8,9 @@ api docs:
 
 
 POST https://fadasdas.herokuapp.com/database/adduser:
+
 send a request to this endpoint. adds a new user to the mongodb. 
+
 it requires name, role, languages, interests
 ```
 send:
@@ -30,6 +32,7 @@ nothing
 ```
 
 GET https://fadasdas.herokuapp.com/database/finduser
+
 retrieve a user. all you need is their name
 ```
 send:
@@ -53,7 +56,9 @@ you will get:
 ```
 
 POST https://fadasdas.herokuapp.com/database/updateUser
+
 this will update a user already existing. if the user does not exist it will not update 
+
 requires: name
 ```
 send:
@@ -74,10 +79,12 @@ you will get:
 nothing
 ```
 
-```
 POST https://fadasdas.herokuapp.com/createMatch
+
 if senior, will return the senior's video uuid. if youth, will be matched with a senior's video uuid.
+
 requires: name
+```
 send:
 {
     "name": "yeet"
