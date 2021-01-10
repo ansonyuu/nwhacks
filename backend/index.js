@@ -40,7 +40,7 @@ io.on('connection', socket => {
   })
 })
 
-server.listen(3000);
+server.listen(PORT);
 
 const runServer = async () => {
   // declare routes

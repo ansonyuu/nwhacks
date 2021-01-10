@@ -1,9 +1,12 @@
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || "0.0.0.0";
 const myPeer = new Peer(undefined, {
-  host: '/',
-  port: '3001'
+  host: "https://fadasdas.herokuapp.com/", // cutie what is this! did i do it wrong! why is it called fadasdas So u SEE. i was fustreated it aint workin so i made a new heroku witha rando name. however then it worked  cuB)tie you heccon broke! wasntme!
+  port: 80
 })
+
 const myVideo = document.createElement('video')
 myVideo.muted = true
 const peers = {}
