@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient'
 
 
 const styles = StyleSheet.create({
@@ -10,6 +11,7 @@ const styles = StyleSheet.create({
     },
   
     button: {
+        zIndex: 10,
       backgroundColor: '#EFDFBB',
       paddingVertical: 30,
       width: 400,
@@ -23,7 +25,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
     borderRadius: 10,
-    elevation: 4,
+
+    '&:hover': {
+        backgroundColor: '#000',
+    },
     },
 
     buttonText: {

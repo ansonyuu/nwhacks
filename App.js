@@ -12,7 +12,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
+          name="Landing"
           component={Landing}
         />
         <Stack.Screen name="Role Selection" component={RoleSelection} />
